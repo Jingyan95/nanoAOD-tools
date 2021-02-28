@@ -29,7 +29,7 @@ p = PostProcessor(".",
                   modules=modulesList,
                   provenance=True,
                   fwkJobReport=True,
-                  haddFileName= 'tree_Skim.root',
+                  noOut=True,
                   histFileName= 'output_hists.root', histDirName = 'lfv',
                   jsonInput=runsAndLumis())
 

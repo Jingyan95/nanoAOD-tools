@@ -32,7 +32,7 @@ p = PostProcessor(".",
                   "(nMuon + nElectron) >=3",
                   modules=modulesList,
                   provenance=True,
-                  fwkJobReport=True,haddFileName= 'tree_Skim.root',
+                  fwkJobReport=True,noOut=True,
                   histFileName= 'output_hists.root', histDirName = 'lfv',
                   jsonInput=runsAndLumis())
 

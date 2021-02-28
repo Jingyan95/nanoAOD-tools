@@ -31,7 +31,7 @@ class PostProcessor :
         if self.jobReport and not self.haddFileName :
             print "Because you requested a FJR we assume you want the final hadd. No name specified for the output file, will use tree.root"
             self.haddFileName="tree.root"
-        self.branchsel = BranchSelection(branchsel) if branchsel else None 
+        self.branchsel = BranchSelection(branchsel) if branchsel else None
         self.outputbranchsel = BranchSelection(outputbranchsel) if outputbranchsel else None
         self.histFileName=histFileName
         self.histDirName=histDirName
@@ -47,7 +47,7 @@ class PostProcessor :
                 elif algo == "ZLIB": compressionAlgo  = ROOT.ROOT.kZLIB
                 else: raise RuntimeError("Unsupported compression %s" % algo)
             else:
-                compressionLevel = 0 
+                compressionLevel = 0
             print "Will write selected trees to "+self.outputDir
             if not self.justcount:
                 if not os.path.exists(self.outputDir):
@@ -56,10 +56,10 @@ class PostProcessor :
             compressionLevel = 0
 
         if self.noOut:
-            if len(self.modules) == 0: 
+            if len(self.modules) == 0:
                 raise RuntimeError("Running with --noout and no modules does nothing!")
 
-            # Open histogram file, if desired 
+            # Open histogram file, if desired
             if (self.histFileName != None and self.histDirName == None) or (self.histFileName == None and self.histDirName != None) :
                 raise RuntimeError("Must specify both histogram file and histogram directory!")
             elif self.histFileName != None and self.histDirName != None:
@@ -84,22 +84,24 @@ class PostProcessor :
 
         ## hadd all input files so we can loop just once
 
-        cmd = './haddnano.py ' + 'haddedtree.root ' + '   '
+#        cmd = './haddnano.py ' + 'haddedtree.root ' + '   '
+        
+        inTree = ROOT.TChain('Events')
         for fname in self.inputFiles:
-            #inChain.Add( fname )
-            cmd += (fname + ' ')
+            inTree.Add( fname )
+            inFile = ROOT.TFile.Open(fname)
+#            cmd += (fname + ' ')
 
-        print cmd 
-        os.system(cmd) 
+#        print cmd
+#        os.system(cmd)
 
-
-        inFile = ROOT.TFile.Open('haddedtree.root')
-
-
-        inTree = inFile.Get("Events")
+#        inFile = ROOT.TFile.Open('haddedtree.root')
+#        inFile = inTree.GetCurrentFile()
+            
+#        inTree = inFile.Get("Events")
 
         print "inTree"
-        print inTree 
+        print inTree
 
 
         totEntriesRead+=inTree.GetEntries()
@@ -119,35 +121,36 @@ class PostProcessor :
             inTree = InputTree(inTree, elist)
 
 
-        if not self.noOut:
-
-            #outFileNames.append(outFileName)
-            if compressionLevel: 
-                outFileName = os.path.join(self.outputDir, os.path.basename(fname).replace(".root",outpostfix+".root"))
-                outFile = ROOT.TFile.Open(outFileName, "RECREATE", "", compressionLevel)
-                outFileNames.append(outFileName)
-                outFile.SetCompressionAlgorithm(compressionAlgo)
-            # prepare output tree
-            if self.friend:
-                outTree = FriendOutput(inFile, inTree, outFile)
-            else:
-                outTree = FullOutput(inFile, inTree, outFile, branchSelection = self.branchsel, fullClone = fullClone, jsonFilter = jsonFilter,provenance=self.provenance)
-        else : 
-            outFile = None
-            outTree = None
+#        if not self.noOut:
+#
+#            #outFileNames.append(outFileName)
+#            if compressionLevel:
+#                outFileName = os.path.join(self.outputDir, os.path.basename(fname).replace(".root",outpostfix+".root"))
+#                outFile = ROOT.TFile.Open(outFileName, "RECREATE", "", compressionLevel)
+#                outFileNames.append(outFileName)
+#                outFile.SetCompressionAlgorithm(compressionAlgo)
+#            # prepare output tree
+#            if self.friend:
+#                outTree = FriendOutput(inFile, inTree, outFile)
+#            else:
+#                outTree = FullOutput(inFile, inTree, outFile, branchSelection = self.branchsel, fullClone = fullClone, jsonFilter = jsonFilter,provenance=self.provenance)
+#        else :
+#            outFile = None
+#            outTree = None
 
         
-        ### Run central modules like jetmetHelperRun2 before MyAnalysisCC module 
+        ### Run central modules like jetmetHelperRun2 before MyAnalysisCC module
         print "Run These modules with python loops :"
         print self.modules[:-1]
-        (nall, npass, timeLoop) = eventLoop(self.modules[:-1], inFile, outFile, inTree, outTree)
-        elist,jsonFilter = preSkim(inTree, self.json, self.cut)# the "eventLoop" function cancels the entrylist, need to preskim again.
+        #(nall, npass, timeLoop) = eventLoop(self.modules[:-1], inFile, outFile, inTree, outTree)
+        #elist,jsonFilter = preSkim(inTree, self.json, self.cut)# the "eventLoop" function cancels the entrylist, need to preskim again.
 
         print "Run This module with C ++ loops :"
         print [self.modules[-1]]
         ## by default in nanoAOD-tools the loop is in python,
         ## the module below has the loop run in C++
         ## only run this on last module in the list [self.modules[-1] which is our modules/lfv/MyAnalysisCC module
+        inTree.SetEntryList(elist)
         nothing = treeLoop([self.modules[-1]], inFile, inTree, elist) #, outTree)
 
         
@@ -163,23 +166,20 @@ class PostProcessor :
         # we need to run this event loop on the jetmethelper2 module
        
         print "run treeLoop in postprocessor"
-        #only run the tree loop (C++ loop instead of python) on last in list, which should be MyAnalysisCC 
+        #only run the tree loop (C++ loop instead of python) on last in list, which should be MyAnalysisCC
 
-        if not self.noOut: 
-            outTree.write()
-            outFile.Close()
-            print "Done %s" % outFileName
+#        if not self.noOut:
+#            outTree.write()
+#            outFile.Close()
+#            print "Done %s" % outFileName
 
         for m in self.modules: m.endJob()
         
         print  totEntriesRead/(time.clock()-t0), "Hz"
 
 
-        if self.haddFileName :
-                os.system("./haddnano.py %s %s" %(self.haddFileName," ".join(outFileNames))) #FIXME: remove "./" once haddnano.py is distributed with cms releases
+#        if self.haddFileName :
+#                os.system("./haddnano.py %s %s" %(self.haddFileName," ".join(outFileNames))) #FIXME: remove "./" once haddnano.py is distributed with cms releases
         if self.jobReport :
-                self.jobReport.addOutputFile(self.haddFileName) # outFileNames[0]
+                #self.jobReport.addOutputFile(self.haddFileName) # outFileNames[0]
                 self.jobReport.save()
-
-    
-

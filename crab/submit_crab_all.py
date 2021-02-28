@@ -35,7 +35,7 @@ ARGS = parser.parse_args()
 
 SAMPLES = {}
 
-#SAMPLES.update(nano_files_2017.mc2017_samples)
+SAMPLES.update(nano_files_2017.mc2017_samples)
 SAMPLES.update(nano_files_2017.data2017_samples)
 
 
@@ -195,7 +195,7 @@ config.General.transferLogs = True
 config.section_("JobType")
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'PSet.py'
-config.JobType.outputFiles = [ 'output_hists.root', 'tree_Skim.root' ]
+config.JobType.outputFiles = [ 'output_hists.root' ]
 config.JobType.scriptExe = 'crab_script_%s.sh' % ( idname )
     # hadd nano will not be needed once nano tools are in cmssw                                                                                                                                                        
 config.JobType.inputFiles = ['crab_script_%s.py' % ( idname), "/afs/cern.ch/user/a/asparker/public/LFVTopCode_MyFork/Feb18/CMSSW_10_6_4/src/data/TopLFV/input/RoccoR2017.txt","/afs/cern.ch/user/a/asparker/public/LFVTopCode_MyFork/Feb18/CMSSW_10_6_4/src/data/TopLFV/include/MyAnalysis.h", "/afs/cern.ch/user/a/asparker/public/LFVTopCode_MyFork/Feb18/CMSSW_10_6_4/src/data/TopLFV/lib/main.so", 'haddnano.py' ]
@@ -295,7 +295,7 @@ p = PostProcessor(".",
                       "(nMuon + nElectron) >=3",
                       modules=modulesList,
                       provenance=True,
-                      fwkJobReport=True,haddFileName= 'tree_Skim.root',
+                      fwkJobReport=True,noOut=True,
                       histFileName= 'output_hists.root', histDirName = 'lfv',
                       jsonInput=runsAndLumis())
 
