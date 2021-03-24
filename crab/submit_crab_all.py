@@ -292,7 +292,7 @@ modulesList.append( MyAnalysisCC( '{ISDATA}'  , ch , [ "output_hists.root",   '{
 
 p = PostProcessor(".",
                       inputFiles(),
-                      "(nMuon + nElectron) >=3",
+                      "(nMuon + nElectron) >=2",
                       modules=modulesList,
                       provenance=True,
                       fwkJobReport=True,noOut=True,

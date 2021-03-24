@@ -29,7 +29,7 @@ modulesList.append( MyAnalysisCC( False , ch , [ "output_hists.root",   "data" ,
 #Jet_pt>25 &&  Jet_eta < 2.5  && (nMuon + nElectron) >=3"
 p = PostProcessor(".",
                   inputFiles(),
-                  "(nMuon + nElectron) >=3",
+                  "(nMuon + nElectron) >=2",
                   modules=modulesList,
                   provenance=True,
                   fwkJobReport=True,noOut=True,
