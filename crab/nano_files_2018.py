@@ -28,6 +28,7 @@ mc2018_samples['2018_ZZTo4L'] = [['/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/balvarez
 
 mc2018_samples['2018_WZTo2L2Q'] = [['/WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/balvarez-TopNanoAODv6-1-1_2018-0d1d4920f08f56d048ece029b873a2cc/USER','/store/user/balvarez/topNanoAOD/v6-1-1/2018/WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/TopNanoAODv6-1-1_2018/200612_152539/0000/'], 'mc','','2018', '','5.595','59.97','28193648']
 
+#This NanoAOD dataset has two parent datasets. The dataset name is used to locate samples.
 #mc2018_samples['2018_WZTo3LNu'] = [['/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/balvarez-TopNanoAODv6-1-1_2018-0d1d4920f08f56d048ece029b873a2cc/USER','/store/user/balvarez/topNanoAOD/v6-1-1/2018/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/TopNanoAODv6-1-1_2018/200612_152609/0000/','/store/user/balvarez/topNanoAOD/v6-1-1/2018/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/TopNanoAODv6-1-1_2018/200612_152635/0000/'], 'mc','','2018', '','4.43','59.97','21997587']
 
 mc2018_samples['2018_WZTo3LNu'] = [['/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/balvarez-TopNanoAODv6-1-1_2018-0d1d4920f08f56d048ece029b873a2cc/USER','/store/user/balvarez/topNanoAOD/v6-1-1/2018/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/TopNanoAODv6-1-1_2018/200612_152609/0000/'], 'mc','','2018', '','4.43','59.97','21997587']
@@ -43,7 +44,7 @@ mc2018_samples['2018_TTZToLLNuNu'] = [['/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo
 mc2018_samples['2018_TTZToQQ'] = [['/TTZToQQ_TuneCP5_13TeV-amcatnlo-pythia8/balvarez-TopNanoAODv6-1-1_2018-0d1d4920f08f56d048ece029b873a2cc/USER','/store/user/balvarez/topNanoAOD/v6-1-1/2018/TTZToQQ_TuneCP5_13TeV-amcatnlo-pythia8/TopNanoAODv6-1-1_2018/200612_151411/0000/' ], 'mc','','2018', '','0.5297','59.97', '750000']
 
 
-
+#For NanoAOD 2018 datasets, run A-C are combined into one single dataset. For now we ignore the era information and use dataset name to locate samples.
 #data2018_samples['2018_A_MuonEG'] = [['/MuonEG/palencia-TopNanoAODv6-1-2_2018-2667fe41f354e79b08df8a25806ccf17/USER','/store/group/phys_top/topNanoAOD/v6-1-2/2018/MuonEG/TopNanoAODv6-1-2_2018/200624_140935/0000/'], 'data','MuonEG','2018', 'A','1','1','1']
 #data2018_samples['2018_B_MuonEG'] = [['/MuonEG/palencia-TopNanoAODv6-1-2_2018-2667fe41f354e79b08df8a25806ccf17/USER','/store/group/phys_top/topNanoAOD/v6-1-2/2018/MuonEG/TopNanoAODv6-1-2_2018/200624_141001/0000/'], 'data','MuonEG','2018', 'B','1','1','1']
 #data2018_samples['2018_C_MuonEG'] = [['/MuonEG/palencia-TopNanoAODv6-1-2_2018-2667fe41f354e79b08df8a25806ccf17/USER','/store/group/phys_top/topNanoAOD/v6-1-2/2018/MuonEG/TopNanoAODv6-1-2_2018/200624_141030/0000/'], 'data','MuonEG','2018', 'C','1','1','1']
@@ -72,22 +73,22 @@ data2018_samples['2018_A_DoubleMu'] = [['/DoubleMuon/palencia-TopNanoAODv6-1-2_2
 data2018_samples['2018_D_DoubleMu'] = [['/DoubleMuon/palencia-TopNanoAODv6-1-2_2018-831765d0aa9cd559fee11ff659127d4e/USER','/store/group/phys_top/topNanoAOD/v6-1-2/2018/DoubleMuon/TopNanoAODv6-1-2_2018/200624_140340/0000/'], 'data','DoubleMu','2018', 'D','1','1','1']
 
 
+## Vector-like signal
+mc2018_samples['2018_LFVStVecC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210504_095637/0000/'], 'mc','','2018', '','0.0512','59.97','500000']
+mc2018_samples['2018_LFVStVecU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_121320/0000/'], 'mc','','2018', '','0.515','59.97','500000']
+mc2018_samples['2018_LFVTtVecC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_122034/0000/'], 'mc','','2018', '','0.032','59.97','500000']
+mc2018_samples['2018_LFVTtVecU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210504_070719/0000/'], 'mc','','2018', '','0.032','59.97','500000']
 
-#mc2018_samples['2018_LFVStVecC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_155453/0000/'], 'mc','','2018', '','0.04' ,'59.97','500000']
-#mc2018_samples['2018_LFVStVecU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_155716/0000/'], 'mc','','2018', '','0.452' ,'59.97','494000']
-#mc2018_samples['2018_LFVTtVecC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201008_025340/0000/'], 'mc','','2018', '','0.032'  ,'59.97','500000']
-#mc2018_samples['2018_LFVTtVecU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201008_025758/0000/'], 'mc','','2018', '','0.032','59.97','498000']
-#
-##tensor interaction
-#mc2018_samples['2018_LFVStTensorC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_150454/0000/'], 'mc','','2018', '','0.187' ,'59.97','500000']
-#mc2018_samples['2018_LFVStTensorU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_150303/0000/'], 'mc','','2018', '','1.9' ,'59.97','500000']
-#mc2018_samples['2018_LFVTtTensorC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_153218/0000/'], 'mc','','2018', '','0.1876','59.97','500000']
-#mc2018_samples['2018_LFVTtTensorU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_152919/0000/'], 'mc','','2018', '','0.1876','59.97','500000']
-#
-##scalar interaction
-#mc2018_samples['2018_LFVStScalarC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_133418/0000/'], 'mc','','2018', '','0.008' ,'59.97','500000']
-#mc2018_samples['2018_LFVStScalarU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_145731/0000/'], 'mc','','2018', '','0.102' ,'59.97','500000']
-#mc2018_samples['2018_LFVTtScalarC'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201007_153437/0000/'], 'mc','','2018', '','0.004'  ,'59.97','500000']
-#mc2018_samples['2018_LFVTtScalarU'] = [['/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/201008_024659/0000/'], 'mc','','2018', '','0.004','59.97','500000']
+## Scalar-like signal
+mc2018_samples['2018_LFVStScalarC'] = [['/eos/cms/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210428_182921/0000/'], 'mc','','2018', '','0.008' ,'59.97','500000']
+mc2018_samples['2018_LFVStScalarU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210505_091252/0000/'], 'mc','','2018', '','0.102' ,'59.97','500000']
+mc2018_samples['2018_LFVTtScalarC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_121911/0000/'], 'mc','','2018', '','0.004' ,'59.97','500000']
+mc2018_samples['2018_LFVTtScalarU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_122205/0000/'], 'mc','','2018', '','0.004' ,'59.97','500000']
+
+## Tensor-like signal
+mc2018_samples['2018_LFVStTensorC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_121608/0000/'], 'mc','','2018', '','0.187' ,'59.97','500000']
+mc2018_samples['2018_LFVStTensorU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_122128/0000/'], 'mc','','2018', '','1.900' ,'59.97','500000']
+mc2018_samples['2018_LFVTtTensorC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210505_090452/0000/'], 'mc','','2018', '','0.1876','59.97','500000']
+mc2018_samples['2018_LFVTtTensorU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2018/CRAB_UserFiles/TopNanoAODv6-1-1_2018/210430_121500/0000/'], 'mc','','2018', '','0.1876','59.97','500000']
 
 

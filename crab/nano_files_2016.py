@@ -72,18 +72,20 @@ data2016_samples['2016_G_DoubleMu'] = [['/DoubleMuon/schoef-TopNanoAODv6-1-2-4_D
 data2016_samples['2016_H_DoubleMu'] = [['/DoubleMuon/schoef-TopNanoAODv6-1-2-4_DoubleMuon_Run2016H-ba7e3129b1ff910ad1abce6981b33804/USER','/store/user/schoef/topNanoAOD/v6-1-2/2016/DoubleMuon/TopNanoAODv6-1-2-4_DoubleMuon_Run2016H/200716_192330/0000/'], 'data','DoubleMu','2016', 'H','1','1','1']
 
 
+## Vector-like signal
+mc2016_samples['2016_LFVStVecC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210429_161402/0000/'], 'mc','','2016', '','0.0512','35.92','284000']
+mc2016_samples['2016_LFVStVecU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_084422/0000/'], 'mc','','2016', '','0.515','35.92','492000']
+mc2016_samples['2016_LFVTtVecC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210501_204904/0000/'], 'mc','','2016', '','0.032','35.92','478000']
+mc2016_samples['2016_LFVTtVecU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_094243/0000/'], 'mc','','2016', '','0.032','35.92','488000']
 
-#mc2016_samples['2016_LFVStVecC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_vector_emutc/'], 'mc','','2016', '','0.0512','35.92','284000']
-#mc2016_samples['2016_LFVStVecU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_vector_emutu/'], 'mc','','2016', '','0.515','35.92','492000']
-#mc2016_samples['2016_LFVTtVecC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_vector_emutc/'], 'mc','','2016', '','0.032','35.92','478000']
-#mc2016_samples['2016_LFVTtVecU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_vector_emutu/'], 'mc','','2016', '','0.032','35.92','488000']
-#
-#mc2016_samples['2016_LFVStScalarC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_clequ1_emutc/'], 'mc','','2016', '','0.008' ,'35.92','182000']
-#mc2016_samples['2016_LFVStScalarU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_clequ1_emutu/'], 'mc','','2016', '','0.102' ,'35.92','302000']
-#mc2016_samples['2016_LFVTtScalarC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_clequ1_emutc/'], 'mc','','2016', '','0.004' ,'35.92','466000']
-#mc2016_samples['2016_LFVTtScalarU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_clequ1_emutu/'], 'mc','','2016', '','0.004' ,'35.92','322000']
-#
-#mc2016_samples['2016_LFVStTensorC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_clequ3_emutc/'], 'mc','','2016', '','0.187' ,'35.92','138000']
-#mc2016_samples['2016_LFVStTensorU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_ST_clequ3_emutu/'], 'mc','','2016', '','1.900' ,'35.92','462000']
-#mc2016_samples['2016_LFVTtTensorC'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_clequ3_emutc/'], 'mc','','2016', '','0.1876','35.92','290000']
-#mc2016_samples['2016_LFVTtTensorU'] = [['/pnfs/iihe/cms/store/user/rgoldouz/TopLfvFullSim/2016/IIHE_Ntuple/ntuple_SMEFTfr_TT_clequ3_emutu/'], 'mc','','2016', '','0.1876','35.92','178000']
+## Scalar-like signal
+mc2016_samples['2016_LFVStScalarC'] = [['/eos/cms/store/user/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210428_173314/0000/'], 'mc','','2016', '','0.008' ,'35.92','182000']
+mc2016_samples['2016_LFVStScalarU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_085055/0000/'], 'mc','','2016', '','0.102' ,'35.92','302000']
+mc2016_samples['2016_LFVTtScalarC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210501_204008/0000/'], 'mc','','2016', '','0.004' ,'35.92','466000']
+mc2016_samples['2016_LFVTtScalarU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210501_205004/0000/'], 'mc','','2016', '','0.004' ,'35.92','322000']
+
+## Tensor-like signal
+mc2016_samples['2016_LFVStTensorC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210501_184053/0000/'], 'mc','','2016', '','0.187' ,'35.92','138000']
+mc2016_samples['2016_LFVStTensorU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_092911/0000/'], 'mc','','2016', '','1.900' ,'35.92','462000']
+mc2016_samples['2016_LFVTtTensorC'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_093620/0000/'], 'mc','','2016', '','0.1876','35.92','290000']
+mc2016_samples['2016_LFVTtTensorU'] = [['/eos/user/a/asparker/TopLFV_nanoAOD/v6-1-1/2016/CRAB_UserFiles/TopNanoAODv6-1-1_2016/210504_093833/0000/'], 'mc','','2016', '','0.1876','35.92','178000']
